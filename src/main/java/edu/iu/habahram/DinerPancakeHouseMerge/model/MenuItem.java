@@ -40,4 +40,8 @@ public class MenuItem extends MenuComponent{
         items[0] = this;
         return items;
     }
+
+    public NullIterator createIterator(){
+        return new NullIterator();
+    }
 }

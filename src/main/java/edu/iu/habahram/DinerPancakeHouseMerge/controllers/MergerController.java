@@ -22,7 +22,6 @@ public class MergerController {
 
     @GetMapping
     public List<MenuItemRecord> get() {
-        List<MenuItemRecord> items = mergerRepository.getTheMenuItems();
-        return items;
+        return mergerRepository.getTheMenuItems();
     }
 }

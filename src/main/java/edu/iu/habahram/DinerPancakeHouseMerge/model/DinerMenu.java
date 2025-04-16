@@ -48,8 +48,9 @@ public class DinerMenu extends Menu{
         return  stringBuilder.toString();
     }
 
-    public DinerMenuIterator createIterator(){
-        return new DinerMenuIterator(menuItems);
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        return new NullIterator();  // leaf node — no children
     }
 
       // other menu methods here

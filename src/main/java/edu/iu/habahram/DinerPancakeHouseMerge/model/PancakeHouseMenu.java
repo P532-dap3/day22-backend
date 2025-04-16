@@ -1,6 +1,7 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class PancakeHouseMenu extends Menu{
@@ -47,8 +48,9 @@ public class PancakeHouseMenu extends Menu{
         return  stringBuilder.toString();
     }
 
-    public PancakeMenuIterator createIterator(){
-        return new PancakeMenuIterator(menuItems);
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        return new NullIterator();  // leaf node — no children
     }
 
     // other menu methods here

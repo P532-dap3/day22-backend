@@ -28,7 +28,8 @@ public class CafeMenu extends Menu{
     }
 
 
-    public Iterator<MenuItem> createIterator() {
-        return menuItems.values().iterator();
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        return new NullIterator();  // leaf node — no children
     }
 }

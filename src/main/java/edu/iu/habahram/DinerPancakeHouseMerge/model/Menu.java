@@ -1,10 +1,14 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.model;
 
+import edu.iu.habahram.DinerPancakeHouseMerge.model.CompositeIterator;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Menu extends MenuComponent{
+    Iterator<MenuComponent> iterator = null;
     ArrayList<MenuComponent> menuComponents = new ArrayList<MenuComponent>();
     String name;
     String description;
@@ -43,5 +47,12 @@ public class Menu extends MenuComponent{
         }
 
         return allItems.toArray(new MenuItem[0]);
+    }
+
+    public Iterator<MenuComponent> createIterator(){
+        if(iterator == null){
+            iterator = new CompositeIterator(menuComponents.iterator());
+        }
+        return iterator;
     }
 }
