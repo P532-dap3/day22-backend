@@ -1,7 +1,8 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.model;
+import java.util.Iterator;
 import java.util.List;
 
-public class PancakeMenuIterator implements Iterator{
+public class PancakeMenuIterator implements Iterator<MenuItem> {
     List<MenuItem> items;
     int position = 0;
 

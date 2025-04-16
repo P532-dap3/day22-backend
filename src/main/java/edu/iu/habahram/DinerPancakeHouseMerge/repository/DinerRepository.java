@@ -4,16 +4,15 @@ import edu.iu.habahram.DinerPancakeHouseMerge.model.DinerMenu;
 import edu.iu.habahram.DinerPancakeHouseMerge.model.MenuItem;
 import org.springframework.stereotype.Repository;
 
-import edu.iu.habahram.DinerPancakeHouseMerge.model.Iterator;
-
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Repository
 public class DinerRepository {
 
     public List<MenuItem> getTheMenu() {
-        Iterator it = this.getIterator();
+        Iterator<MenuItem> it = this.getIterator();
         List<MenuItem> menuItems = new ArrayList<>();
         while(it.hasNext()) {
             menuItems.add((MenuItem) it.next());
@@ -21,7 +20,7 @@ public class DinerRepository {
         return menuItems;
     }
 
-    public Iterator getIterator(){
+    public Iterator<MenuItem> getIterator(){
         return new DinerMenu().createIterator();
     }
 }
