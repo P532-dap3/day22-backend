@@ -1,9 +1,6 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.model;
 
-import edu.iu.habahram.DinerPancakeHouseMerge.controllers.PancakeMenuIterator;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class PancakeHouseMenu {
@@ -40,13 +37,9 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
-    }
-
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for(MenuItem item: getMenuItems()) {
+        for(MenuItem item: this.menuItems) {
             stringBuilder.append(item.toString());
         }
         return  stringBuilder.toString();

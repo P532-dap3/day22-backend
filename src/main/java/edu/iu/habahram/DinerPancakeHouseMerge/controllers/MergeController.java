@@ -30,8 +30,13 @@ public class MergeController {
     @GetMapping
     public List<MenuItem> get() {
 
-        List<MenuItem> mergeList = new ArrayList<>(Arrays.asList(dinerRepository.getTheMenu()));
-        mergeList.addAll(panCakeHouseRepository.getTheMenu());
-        return mergeList;
+        List<MenuItem> dinerMenu = this.dinerRepository.getTheMenu();
+        List<MenuItem> panCakeMenu = this.panCakeHouseRepository.getTheMenu();
+
+        List<MenuItem> mergedList = new ArrayList<>();
+        mergedList.addAll(dinerMenu);
+        mergedList.addAll(panCakeMenu);
+
+        return mergedList;
     }
 }

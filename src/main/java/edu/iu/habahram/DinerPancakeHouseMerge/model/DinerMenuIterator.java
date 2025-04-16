@@ -1,9 +1,4 @@
-package edu.iu.habahram.DinerPancakeHouseMerge.controllers;
-
-import edu.iu.habahram.DinerPancakeHouseMerge.model.MenuItem;
-
-import java.util.Iterator;
-import java.util.List;
+package edu.iu.habahram.DinerPancakeHouseMerge.model;
 
 public class DinerMenuIterator implements Iterator{
     MenuItem[] items;
@@ -20,10 +15,6 @@ public class DinerMenuIterator implements Iterator{
     }
 
     public boolean hasNext(){
-        if(position > items.length){
-            return false;
-        }else{
-            return true;
-        }
+        return position < items.length && items[position] != null;
     }
 }
