@@ -41,8 +41,6 @@ public class PancakeHouseMenu {
         return menuItems;
     }
 
-
-
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         for(MenuItem item: getMenuItems()) {
