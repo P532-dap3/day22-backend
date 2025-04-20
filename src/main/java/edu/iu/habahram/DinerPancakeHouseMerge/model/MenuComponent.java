@@ -31,6 +31,6 @@ public abstract class MenuComponent {
     }
 
     public Iterator<MenuComponent> createIterator(){
-        return new NullIterator(); // If overridden correctly
+        throw new UnsupportedOperationException();
     }
 }

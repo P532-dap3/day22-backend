@@ -1,17 +1,17 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.model;
-
 import java.util.Iterator;
 
-public class NullIterator implements Iterator {
-    public Object next(){
-        return null;
-    }
 
-    public boolean hasNext(){
+public class NullIterator implements Iterator<MenuComponent> {
+    public boolean hasNext() {
         return false;
     }
 
-    public void remove(){
-        throw new UnsupportedOperationException();
+    public MenuComponent next() {
+        return null;
+    }
+
+    public void remove() {
+        Iterator.super.remove();
     }
 }

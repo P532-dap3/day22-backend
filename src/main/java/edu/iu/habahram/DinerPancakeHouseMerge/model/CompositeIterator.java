@@ -1,28 +1,26 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.model;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Stack;
 
-public class CompositeIterator implements Iterator {
-    Stack<Iterator<MenuComponent>> stack = new Stack<Iterator<MenuComponent>>();
+public class CompositeIterator implements Iterator<MenuComponent> {
+    Stack<Iterator<MenuComponent>> stack = new Stack<>();
 
-    public CompositeIterator(Iterator iterator){
+    public CompositeIterator(Iterator<MenuComponent> iterator) {
         stack.push(iterator);
     }
 
-    public Object next(){
-        if(hasNext()){
+    public MenuComponent next() {
+        if (hasNext()) {
             Iterator<MenuComponent> iterator = stack.peek();
             MenuComponent component = iterator.next();
-
             stack.push(component.createIterator());
-
             return component;
-        }else{
-            return null;
         }
+        return null;
     }
 
-    public boolean hasNext(){
+    public boolean hasNext() {
         while (!stack.isEmpty()) {
             Iterator<MenuComponent> iterator = stack.peek();
             if (iterator.hasNext()) {
@@ -32,5 +30,9 @@ public class CompositeIterator implements Iterator {
             }
         }
         return false;
+    }
+
+    public void remove() {
+        throw new UnsupportedOperationException();
     }
 }
