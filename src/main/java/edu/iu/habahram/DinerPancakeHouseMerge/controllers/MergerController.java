@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/merge")
+@RequestMapping("/merger")
 public class MergerController {
 
     MergerRepository mergerRepository;
